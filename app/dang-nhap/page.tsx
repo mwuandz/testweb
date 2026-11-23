@@ -53,7 +53,7 @@ export default function DangNhapPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 noel-hero-bg">
       <div className="mx-auto max-w-md px-4 py-10">
         <Link
           href="/"
@@ -65,7 +65,7 @@ export default function DangNhapPage() {
 
         <div className="card-surface p-8">
           <div className="mb-6 text-center">
-            <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white">
+            <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-amber-500 text-white">
               <User className="h-7 w-7" />
             </div>
             <h1 className="text-2xl font-black">
@@ -113,7 +113,7 @@ export default function DangNhapPage() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Họ tên *"
                 required
-                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-400/20"
               />
             )}
             <input
@@ -121,7 +121,7 @@ export default function DangNhapPage() {
               onChange={(e) => setContact(e.target.value)}
               placeholder="Zalo / Số điện thoại *"
               required
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-400/20"
             />
             {mode === "register" && (
               <input
@@ -129,7 +129,7 @@ export default function DangNhapPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email (tuỳ chọn)"
-                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-400/20"
               />
             )}
             <input
@@ -139,7 +139,7 @@ export default function DangNhapPage() {
               placeholder={mode === "register" ? "Mật khẩu (tối thiểu 6 ký tự) *" : "Mật khẩu *"}
               required
               minLength={mode === "register" ? 6 : 1}
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-400/20"
             />
 
             {error && (

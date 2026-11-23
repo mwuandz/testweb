@@ -9,15 +9,15 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f1225" },
+    { media: "(prefers-color-scheme: light)", color: "#c41e3a" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a0a0f" },
   ],
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Minh Wuan Store | Mua App Pro/Premium – ChatGPT, CapCut, Netflix",
+    default: "🎄 Minh Wuan Store | Noel Sale – App Pro/Premium giá tốt",
     template: "%s | Minh Wuan Store",
   },
   description:

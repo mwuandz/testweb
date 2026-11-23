@@ -51,7 +51,7 @@ export default function ProductDetailPage() {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-red-500 border-t-transparent" />
       </div>
     );
   }
@@ -68,11 +68,11 @@ export default function ProductDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 noel-hero-bg">
       <div className="container-main py-6 max-w-5xl">
         <Link
           href="/"
-          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:text-slate-50"
+          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400"
         >
           <ArrowLeft className="h-4 w-4" />
           Quay lại bảng giá
@@ -85,7 +85,7 @@ export default function ProductDetailPage() {
               // eslint-disable-next-line @next/next/no-img-element
               <img src={product.image} alt={product.name} className="h-40 w-40 object-contain" />
             ) : (
-              <div className="flex h-40 w-40 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-600 to-violet-600 text-5xl font-black text-white">
+              <div className="flex h-40 w-40 items-center justify-center rounded-3xl bg-gradient-to-br from-red-600 to-amber-500 text-5xl font-black text-white">
                 {product.name.charAt(0)}
               </div>
             )}
@@ -93,14 +93,14 @@ export default function ProductDetailPage() {
 
           {/* Right: Info */}
           <div>
-            <div className="mb-2 text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            <div className="mb-2 text-sm font-bold uppercase tracking-wide text-red-600/80 dark:text-red-400/80">
               {product.category}
             </div>
-            <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{product.name}</h1>
+            <h1 className="text-3xl font-black tracking-tight sm:text-4xl flex items-center gap-2">{product.name} <span className="text-2xl">🎄</span></h1>
             <p className="mt-2 text-lg text-slate-500 dark:text-slate-400">{product.duration}</p>
 
             {product.badge && (
-              <span className="mt-3 inline-block rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-3 py-1 text-xs font-bold text-white">
+              <span className="mt-3 inline-block rounded-full bg-gradient-to-r from-red-600 to-amber-500 px-3 py-1 text-xs font-bold text-white">
                 {product.badge}
               </span>
             )}
@@ -125,14 +125,14 @@ export default function ProductDetailPage() {
             {/* Trust */}
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               <div className="flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
-                <Shield className="h-5 w-5 shrink-0 text-blue-500" />
+                <Shield className="h-5 w-5 shrink-0 text-red-500" />
                 <div>
                   <div className="text-sm font-bold">Bảo hành</div>
                   <div className="text-xs text-slate-500 dark:text-slate-400">Trong thời gian sử dụng</div>
                 </div>
               </div>
               <div className="flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
-                <Clock className="h-5 w-5 shrink-0 text-violet-500" />
+                <Clock className="h-5 w-5 shrink-0 text-amber-500" />
                 <div>
                   <div className="text-sm font-bold">Kích hoạt nhanh</div>
                   <div className="text-xs text-slate-500 dark:text-slate-400">1–5 phút sau thanh toán</div>

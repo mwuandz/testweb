@@ -42,6 +42,15 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground) / <alpha-value>)",
         },
         brand: {
+        noel: {
+          red: "#c41e3a",
+          "red-dark": "#9b1b2e",
+          green: "#1a7a4c",
+          "green-light": "#2d9b6a",
+          gold: "#d4a017",
+          "gold-light": "#f0c14b",
+          cream: "#fff8f0",
+        },
           50: "#eff6ff",
           100: "#dbeafe",
           200: "#bfdbfe",

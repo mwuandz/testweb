@@ -71,7 +71,7 @@ function dateTimeLocalToIso(value: string) {
 
 const statusConfig: Record<string, { label: string; className: string; icon: React.ReactNode }> = {
   pending: { label: "Chờ TT", className: "bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300", icon: <Clock className="h-3.5 w-3.5" /> },
-  paid: { label: "Đã TT", className: "bg-blue-100 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300", icon: <CheckCircle2 className="h-3.5 w-3.5" /> },
+  paid: { label: "Đã TT", className: "bg-red-100 text-red-700 dark:bg-blue-950/50 dark:text-blue-300", icon: <CheckCircle2 className="h-3.5 w-3.5" /> },
   delivered: { label: "Đã giao", className: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300", icon: <Truck className="h-3.5 w-3.5" /> },
   cancelled: { label: "Hủy", className: "bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300", icon: <XCircle className="h-3.5 w-3.5" /> },
 };
@@ -374,7 +374,7 @@ export default function AdminPage() {
         {!isAuthed && (
           <div className="mx-auto max-w-md">
             <div className="card-surface p-8 text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-amber-500 text-white">
                 <Settings className="h-7 w-7" />
               </div>
               <h1 className="text-2xl font-black">Đăng nhập Admin</h1>
@@ -388,7 +388,7 @@ export default function AdminPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && loadAll()}
-                  className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-400/20"
                 />
                 <button onClick={loadAll} disabled={loading} className="btn-primary w-full py-3">
                   {loading ? (
@@ -433,7 +433,7 @@ export default function AdminPage() {
                   className={cn(
                     "inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-bold transition",
                     tab === t.id
-                      ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-md shadow-blue-500/25"
+                      ? "bg-gradient-to-r from-red-600 to-amber-500 text-white shadow-md shadow-red-500/25"
                       : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200/80 dark:hover:bg-slate-700/80 hover:text-slate-900 dark:text-slate-50"
                   )}
                 >
@@ -463,7 +463,7 @@ export default function AdminPage() {
                   <div className="card-surface p-5">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-500 dark:text-slate-400">Tổng doanh thu</span>
-                      <TrendingUp className="h-4 w-4 text-blue-500" />
+                      <TrendingUp className="h-4 w-4 text-red-500" />
                     </div>
                     <div className="mt-2 text-2xl font-black">{formatMoney(stats.revenue)}</div>
                     <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">{stats.paid + stats.delivered} đơn thành công</div>
@@ -539,7 +539,7 @@ export default function AdminPage() {
                   {orders.length > 8 && (
                     <button
                       onClick={() => setTab("orders")}
-                      className="w-full border-t border-slate-200 dark:border-slate-700 py-3 text-sm font-bold text-blue-600 hover:bg-slate-100/50 dark:bg-slate-800/50 transition"
+                      className="w-full border-t border-slate-200 dark:border-slate-700 py-3 text-sm font-bold text-red-600 hover:bg-slate-100/50 dark:bg-slate-800/50 transition"
                     >
                       Xem tất cả đơn →
                     </button>
@@ -553,7 +553,7 @@ export default function AdminPage() {
               <div className="card-surface overflow-hidden">
                 <div className="border-b border-slate-200 dark:border-slate-700 px-5 py-4 flex items-center justify-between">
                   <span className="font-bold">Tất cả đơn hàng ({orders.length})</span>
-                  <button onClick={() => loadOrders()} className="text-sm font-semibold text-blue-600 hover:underline">
+                  <button onClick={() => loadOrders()} className="text-sm font-semibold text-red-600 hover:underline">
                     Làm mới
                   </button>
                 </div>

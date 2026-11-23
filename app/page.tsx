@@ -5,6 +5,7 @@ import { defaultProducts, defaultSettings } from "@/lib/products";
 import { formatMoney } from "@/lib/money";
 import { CartItem, Order, Product, SiteSettings } from "@/lib/types";
 import { Header } from "@/components/header";
+import { Snow } from "@/components/snow";
 import { ProductCard } from "@/components/product-card";
 import { CartDrawer } from "@/components/cart-drawer";
 import { Shield, Zap, QrCode, Gift, X, Clock, CheckCircle2 } from "lucide-react";
@@ -304,9 +305,10 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 noel-hero-bg relative">
+      <Snow count={35} />
       {/* Top marquee */}
-      <div className="overflow-hidden bg-slate-900 text-white">
+      <div className="overflow-hidden flash-banner text-white">
         <div className="marquee-track py-2.5 text-sm font-medium">
           <span className="px-8">🔥 {settings.warningText}</span>
           <span className="px-8">🔥 {settings.warningText}</span>
@@ -316,7 +318,7 @@ export default function HomePage() {
       </div>
 
       {/* Event strip */}
-      <div className="border-b border-slate-200 dark:border-slate-700 bg-gradient-to-r from-blue-500/10 via-violet-500/10 to-pink-500/10 py-2.5 text-center text-sm font-bold text-blue-600 dark:text-blue-400">
+      <div className="border-b border-red-200/50 dark:border-red-900/40 bg-gradient-to-r from-red-500/10 via-amber-500/10 to-emerald-500/10 py-2.5 text-center text-sm font-bold text-red-700 dark:text-red-400">
         ✅ {settings.eventText}
       </div>
 
@@ -332,7 +334,7 @@ export default function HomePage() {
       <section className="container-main py-12 lg:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <span className="mb-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+            <span className="mb-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
               {settings.siteSubtitle}
             </span>
             <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl leading-[1.1]">
@@ -368,7 +370,7 @@ export default function HomePage() {
             <div className="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-violet-500/20 blur-3xl" />
             <div className="relative card-surface p-6 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white font-bold">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-amber-500 text-white font-bold">
                   <QrCode className="h-6 w-6" />
                 </div>
                 <div>
@@ -389,7 +391,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex justify-between border-t border-slate-200 dark:border-slate-700 pt-2 text-base">
                   <span className="font-bold">Cần thanh toán</span>
-                  <span className="font-black text-blue-600 dark:text-blue-400">
+                  <span className="font-black text-red-600 dark:text-red-400">
                     {formatMoney(payableTotal)}
                   </span>
                 </div>
@@ -403,7 +405,7 @@ export default function HomePage() {
       <section id="products" className="container-main pb-20">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <span className="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+            <span className="text-sm font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
               Bảng giá App Pro/Premium
             </span>
             <h2 className="mt-1 text-3xl font-black tracking-tight">Chọn sản phẩm và thêm vào giỏ</h2>
@@ -419,7 +421,7 @@ export default function HomePage() {
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-bold transition",
                 category === item
-                  ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-md shadow-blue-500/25"
+                  ? "bg-gradient-to-r from-red-600 to-amber-500 text-white shadow-md shadow-blue-500/25"
                   : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200/80 dark:hover:bg-slate-700/80 hover:text-slate-900 dark:text-slate-50"
               )}
             >

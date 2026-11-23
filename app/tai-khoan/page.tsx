@@ -30,7 +30,7 @@ const statusMap: Record<string, { label: string; className: string; icon: React.
   },
   paid: {
     label: "Đã thanh toán",
-    className: "bg-blue-100 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300",
+    className: "bg-red-100 text-red-700 dark:bg-blue-950/50 dark:text-blue-300",
     icon: <CheckCircle2 className="h-3.5 w-3.5" />,
   },
   delivered: {
@@ -108,7 +108,7 @@ export default function TaiKhoanPage() {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+        <Loader2 className="h-8 w-8 animate-spin text-red-500" />
       </div>
     );
   }
@@ -116,7 +116,7 @@ export default function TaiKhoanPage() {
   if (!customer) return null;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 noel-hero-bg">
       <div className="mx-auto max-w-3xl px-4 py-8">
         <div className="mb-6 flex items-center justify-between">
           <Link
@@ -138,7 +138,7 @@ export default function TaiKhoanPage() {
         {/* Profile card */}
         <div className="card-surface mb-6 p-6">
           <div className="flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-xl font-black text-white">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-amber-500 text-xl font-black text-white">
               {customer.name.charAt(0).toUpperCase()}
             </div>
             <div>
@@ -161,10 +161,10 @@ export default function TaiKhoanPage() {
         <div className="card-surface overflow-hidden">
           <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 px-5 py-4">
             <div className="flex items-center gap-2 font-bold">
-              <Package className="h-5 w-5 text-blue-500" />
+              <Package className="h-5 w-5 text-red-500" />
               Lịch sử đơn hàng ({orders.length})
             </div>
-            <Link href="/" className="text-sm font-semibold text-blue-600 hover:underline">
+            <Link href="/" className="text-sm font-semibold text-red-600 hover:underline">
               Mua thêm
             </Link>
           </div>

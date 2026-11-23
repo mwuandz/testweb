@@ -8,7 +8,7 @@ import { Order } from "@/lib/types";
 
 const statusMap: Record<string, { label: string; color: string; icon: React.ReactNode }> = {
   pending: { label: "Chờ thanh toán", color: "text-amber-500", icon: <Clock className="h-5 w-5" /> },
-  paid: { label: "Đã thanh toán", color: "text-blue-500", icon: <CheckCircle2 className="h-5 w-5" /> },
+  paid: { label: "Đã thanh toán", color: "text-red-500", icon: <CheckCircle2 className="h-5 w-5" /> },
   delivered: { label: "Đã giao hàng", color: "text-emerald-500", icon: <Truck className="h-5 w-5" /> },
   cancelled: { label: "Đã hủy", color: "text-rose-500", icon: <XCircle className="h-5 w-5" /> },
 };
@@ -45,7 +45,7 @@ export default function TraCuuPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 noel-hero-bg">
       <div className="container-main py-8 max-w-2xl">
         <Link
           href="/"
@@ -56,7 +56,7 @@ export default function TraCuuPage() {
         </Link>
 
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/30">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-red-600 to-amber-500 text-white shadow-lg shadow-red-500/30">
             <Package className="h-8 w-8" />
           </div>
           <h1 className="text-3xl font-black tracking-tight">Tra cứu đơn hàng</h1>
@@ -73,7 +73,7 @@ export default function TraCuuPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Mã đơn MW... hoặc SĐT / Zalo"
-                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-3.5 pl-12 pr-4 text-base outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-3.5 pl-12 pr-4 text-base outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-400/20"
               />
             </div>
             <button
