@@ -58,3 +58,12 @@ Xóa dòng `<Snow count={35} />` trong `app/page.tsx`.
 
 ---
 minhwuan.com · Noel 2026
+
+## Nâng cấp bổ sung – bản Noel Plus
+
+- Wishlist yêu thích lưu trong `localStorage`, có thể bật lọc chỉ xem sản phẩm đã thích.
+- Sắp xếp sản phẩm theo giá tăng/giảm và tên A–Z.
+- Hiệu ứng đèn Noel nhấp nháy, hero xuất hiện mượt và khối thông tin nổi nhẹ.
+- Thẻ sản phẩm có hiệu ứng ánh sáng quét khi hover và nút tim yêu thích.
+- Tôn trọng `prefers-reduced-motion` để giảm chuyển động theo cài đặt trợ năng.
+- Giữ nguyên luồng giỏ hàng, voucher, tạo đơn và thanh toán VietQR hiện có.
