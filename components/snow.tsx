@@ -2,42 +2,37 @@
 
 import { useEffect, useState } from "react";
 
-const FLAKES = ["❄", "❅", "❆", "•"];
-
 export function Snow({ count = 40 }: { count?: number }) {
   const [flakes, setFlakes] = useState<
-    { id: number; left: number; delay: number; duration: number; size: number; char: string }[]
+    { id: number; left: number; delay: number; duration: number; size: number }[]
   >([]);
 
   useEffect(() => {
-    const generated = Array.from({ length: count }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      delay: Math.random() * 8,
-      duration: 10 + Math.random() * 15,
-      size: 0.6 + Math.random() * 1.1,
-      char: FLAKES[Math.floor(Math.random() * FLAKES.length)],
-    }));
-    setFlakes(generated);
+    setFlakes(
+      Array.from({ length: count }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 5,
+        duration: 8 + Math.random() * 12,
+        size: 2 + Math.random() * 4,
+      }))
+    );
   }, [count]);
 
-  if (flakes.length === 0) return null;
-
   return (
-    <div className="snow-container" aria-hidden>
+    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden" aria-hidden>
       {flakes.map((f) => (
         <span
           key={f.id}
-          className="snowflake"
+          className="absolute top-[-10px] rounded-full bg-white/80 animate-snowfall"
           style={{
             left: `${f.left}%`,
+            width: f.size,
+            height: f.size,
             animationDelay: `${f.delay}s`,
             animationDuration: `${f.duration}s`,
-            fontSize: `${f.size}rem`,
           }}
-        >
-          {f.char}
-        </span>
+        />
       ))}
     </div>
   );
